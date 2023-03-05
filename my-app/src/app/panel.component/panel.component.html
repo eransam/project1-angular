@@ -1,0 +1,13 @@
+<p>panel works!</p>
+
+<!--כאן אנו יוצרים תבנית העוטפת טקסט מסויים כך שכל מי שיקרה לקומפוננטה הזו יוכל לכתוב בתוכה תגית ולרשת את העיצוב שלה -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <!--זה תג שמור אשר מאפשר לכתוב עוד תגים בתוכו  , יש לראות דוגמא באפ קומפוננט ng-content  -->
+        <ng-content select=".heading"></ng-content>
+    </div>
+    <div class="panel-body">
+        <ng-content select=".body"></ng-content>
+    </div>
+
+</div>

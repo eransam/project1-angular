@@ -1,5 +1,5 @@
 
-import { LikeComponent } from './like.component';
+import { LikeComponent } from '../Like/like.component';
 
 let component = new LikeComponent(10, true);
 component.onClick();

@@ -1,20 +1,11 @@
 import { Component, OnInit , Input ,Output, EventEmitter} from '@angular/core';
-@Component({
-  selector: 'app-favorite',
-  templateUrl: './favorite.component.html',
-//   template: ''
-  styleUrls: ['./favorite.component.css'],
-// יחשב כי הוא נכתב אחרון בקובץ שלנו styles בסטייל מה שיהיה כתוב אחרון יחשב, במקרה הזה מה שיהיה כתוב ב
-//הוא יחשב הראשון html  במידה ונכתוב סטייל בקובץ ה 
-styles: [
-    `
-    .glyphicon{
-        color: red;
-    }
-    `]
-})
-export class FavoriteComponent implements OnInit {
 
+@Component({
+  selector: 'app-ng-class-ex',
+  templateUrl: './ng-class-ex.component.html',
+  styleUrls: ['./ng-class-ex.component.css']
+})
+export class NgClassExComponent {
     // משתנה בוליאני שלא הוזן לו ערך הוא יהיה שווה לשקר
     //כאשר אנו מצהירים את פונ זו על משתנה זה אומר שהוא יכול לקבל ערך מקומפוננטות אשר מזמנות את הקומפוננטה הנוכחית @Input()
     // זה אותו פעולה של פרופס בריאקט
@@ -43,12 +34,4 @@ export class FavoriteComponent implements OnInit {
         console.log("test: " , this.isSelected);
 
     }
-
-
-
 }
-
-
-
-
-

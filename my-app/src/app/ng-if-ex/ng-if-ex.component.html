@@ -1,0 +1,12 @@
+<p>ng-if-ex works!</p>
+
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+
+<ng-template #coursesList>
+    list of courses
+</ng-template>
+
+<ng-template #noCourses>
+    no courses yet
+</ng-template>
+

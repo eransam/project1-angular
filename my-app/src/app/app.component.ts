@@ -9,6 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+tweet={
+    likesCounts:10,
+    isLiked:true
+}
+
+
   title = 'angular app';
   post = {
     title:"Title",

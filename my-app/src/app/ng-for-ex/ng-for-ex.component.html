@@ -1,0 +1,25 @@
+<p>ng-for-ex works!</p>
+<button (click)="onAdd()">Add</button>
+<button (click)="loadCourses()">loadCourses</button>
+
+<ul>
+    <!--אשר מציג את האינדקס של המערך index יש לנו כמה פרמטרים שמורים ללולאה לדוג ה -->
+    <li *ngFor="let course of courses; index as i">
+        {{i}} - {{course.name}}
+
+    </li>
+</ul>
+
+
+<ul>
+    <!--שהוהא בוליאני והוא אמת במידה והתא של המערך הוא זוגי even וכאן לדוג  -->
+    <!--trackBy: trackCourse כדי שלא נתפוס עוד מקום בזכרון בכל פעם שנלחת על הכפתור אנו נוסיף את הפקודה הזו -->
+    <!-- וכך המערכת תידע שאם יש לה עוד אובייקט עם אותו איידי אז לא צריך לפתוח עוד מקום בזכרון והיא משייכת את האובייקט למקום שכבר קיים -->
+    <!--פונ זו מחזירה את האיידי של האובייקט וזה אומר למערכת לסדר בזכרון לפי האיידי ובמידה וקיים כבר אובייקט בזכרון עם האיידי הזה שתכניס לשם את האובייקט ולא תפתח צקום חדש trackCourse -->
+    <li *ngFor="let course of courses; even as isEven; trackBy: trackCourse">
+        {{course.name}}<span *ngIf="isEven">-even</span>
+        <button (click)="onChange(course)">Remove</button>
+    </li>
+</ul>
+
+

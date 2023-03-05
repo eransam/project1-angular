@@ -11,6 +11,14 @@ import { SummaryPipe } from 'summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { AssignmentTitleCasingComponent } from './assignment-title-casing/assignment-title-casing.component';
 import { TitleCasePipe } from './title-case.pipe';
+import { PanelComponent } from './panel.component/panel.component';
+import { LikesComponent } from './likes/likes.component';
+import { NgIfExComponent } from './ng-if-ex/ng-if-ex.component';
+import { NgSwithCaseExComponent } from './ng-swith-case-ex/ng-swith-case-ex.component';
+import { NgForExComponent } from './ng-for-ex/ng-for-ex.component';
+import { NgClassExComponent } from './ng-class-ex/ng-class-ex.component';
+import { InputFormatDirective } from './input-format.directive';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   // כאן אנו רושמים את כל הקומפוננטות השייכות לפרוייקט
@@ -21,7 +29,15 @@ import { TitleCasePipe } from './title-case.pipe';
     SummaryPipe,
     FavoriteComponent,
     AssignmentTitleCasingComponent,
-    TitleCasePipe
+    TitleCasePipe,
+    PanelComponent,
+    LikesComponent,
+    NgIfExComponent,
+    NgSwithCaseExComponent,
+    NgForExComponent,
+    NgClassExComponent,
+    InputFormatDirective,
+    ZippyComponent,
   ],
   imports: [
     BrowserModule,

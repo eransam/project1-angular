@@ -1,3 +1,7 @@
+<app-zippy title="Shipping Deatails">
+    Shipping Deatails content
+</app-zippy>
+
 <!-- <h1>angular</h1>
 <courses></courses>
 <app-authors1></app-authors1> -->
@@ -5,4 +9,27 @@
 <!--האיבנט נקרא emit כי כאשר אנו שולחים את ה -->
 <!--onFavoriteChange שולח לנו כפרמטר לפונ emit אנו נשלח בעצם את כל מה שה $event כאשר אנו מוסיפים את הפקודה  -->
 <app-favorite [isFavorite]="post.isFavorite" (change) ="onFavoriteChange($event)"></app-favorite>
+
 <app-assignment-title-casing></app-assignment-title-casing>
+
+<app-panel>
+    <div class="heading">heading</div>
+    <div class="body">
+        <h2>body</h2>
+        <p>some content here..</p>
+    </div>
+</app-panel>
+
+<app-likes 
+[likesCount]="tweet.likesCounts" [isActive]="tweet.isLiked">
+</app-likes>
+<app-ng-if-ex></app-ng-if-ex>
+<app-ng-swith-case-ex></app-ng-swith-case-ex>
+<app-ng-for-ex></app-ng-for-ex>
+
+
+
+
+משתנה את הטקסט לאותיות קטנות או גדולות ביציאה מהאינפוט: 
+<input type="text" [appInputFormat]="'uppercase'">
+
