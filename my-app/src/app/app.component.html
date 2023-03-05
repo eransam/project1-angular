@@ -1,0 +1,8 @@
+<!-- <h1>angular</h1>
+<courses></courses>
+<app-authors1></app-authors1> -->
+<!--onFavoriteChange() היא תריץ את הפונ emit  שבמידה ותקבל את פקודת ה  @Output() change = new EventEmitter() זהו איבנט אשר יצרנו בהתאמה אישית ע''י ה' (change) -->
+<!--האיבנט נקרא emit כי כאשר אנו שולחים את ה -->
+<!--onFavoriteChange שולח לנו כפרמטר לפונ emit אנו נשלח בעצם את כל מה שה $event כאשר אנו מוסיפים את הפקודה  -->
+<app-favorite [isFavorite]="post.isFavorite" (change) ="onFavoriteChange($event)"></app-favorite>
+<app-assignment-title-casing></app-assignment-title-casing>
