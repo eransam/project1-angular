@@ -1,0 +1,78 @@
+<p>contaact-form works!</p>
+
+<!--שיצרנו בשדות הפורם רק שפה אנגולר יוצר את זה אוטומטי ngModelכמו ב ngForm אנגולר אוטומטי יותר לנו משתנה אשר מכיל את כל המידע של הפורם שנקרא  form כאשר אנו יוצרים תגית -->
+<!--#f="ngForm" ןלכן כאן כאשר אנו רוצים לגשת למידע של הפורם הכולל אנו רק צריכים ליצור הפנייה למשתנה זה כך:  -->
+<form #f="ngForm" (ngSubmit)="submit(f)">
+
+    <!--"ngForm"אנו נוכל למצוא את שדות אלו יותר בקלות ב "contact"  וע''י שם מסויים שאנו נקבע ' ngModelGroup בשביל הסדר של הדאטה אנו יכולים לתחום קבוצה של שדות ב -->
+    <div ngModelGroup="contact" #contact = ngModelGroup>
+    
+    
+    
+        <!-- text-area--------------------------------------------------------------------- -->
+
+
+    <div class="form-group">
+        <label for="firstName">firstName</label>
+        <!--הוא איבנט בילד אין אשר מופעל בשינוי הערך באינפוט (change) -->
+        <!-- [{ngModel}] פקודה זו שונה מ   ngModel name="firstName"-->
+        <!--firstName מעביר את המידע מהשדה שבתוך הפורם (הפקודה הזו שונה מ  )ושומר את המידע בקיי שנקרא  ngModel name="firstName" -->
+        <!--מכיל ודרכו אנו יכולים לקרוא למשתנה ולגשת למידע שבתוכו ngModel וכם הוא מכיל את כל המידע ש ngModel פה אנו יוצרים משתנה שהוא רפרנס ל #firstName2="ngModel"-->
+        <!--יש לנו גם מס ולידציות מובנות כמו בדוג וכדי לתפוס את השגיאות של היוזר במידה והחלנו אותם minlength="3" -->
+        <!--וכך לראות עם היזור עבד בולידציוץ firstName2.errors.required שנקרא ngModel אנו יכולים לגשת לשדה של ה -->
+        <input required class="form-control" minlength="3" maxlength="10" pattern="banana" ngModel name="firstName" id="firstName" type="text" #firstName2="ngModel" (change)="log(firstName2)">
+        <!--וכך מוודאים ולידציות ngModelכאן אנו ניגשים למשתנה הרפרנס שכיל את המידע מה firstName2.touched -->
+            <div class="alert alert-danger" *ngIf="firstName2.touched && !firstName2.valid">
+                <div *ngIf="firstName2.errors.required">First name is required</div>
+                <div *ngIf="firstName2.errors.minlength">minlength is {{firstName2.errors.minlength.requiredLength}}</div>
+                <div *ngIf="firstName2.errors.pattern">pattern is banana</div>
+            </div>
+
+    </div>
+
+    <!-- text-area--------------------------------------------------------------------- -->
+
+    <div class="form-group">
+        <label for="comment">comment</label>
+        <textarea  ngModel name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+        <div class="checkbox">
+            <label for="">
+                <input type="checkbox" ngModel name="isSubscribe"> subscribe to mailing list
+            </label>
+        </div>
+
+        <!--select--------------------------------------------------------------------- -->
+
+
+        <div class="form-group">
+            <label for="contactMethod"></label>
+            <!--אנו יכולים לתת ליוזר לבדוק יותר מאופציה אחת multiple בעזרת הפקודה  -->
+            <select multiple ngModel name="contactMethod" id="contactMethod" class="form-control">
+                <!--עושה [value]וכך לאחסן בערך של התג גם אובייקטים ולא רק מידע מסוג סטרינג כמו שה [ngValue] אנו יכולים לשנות ל -->
+                <!--<option *ngFor="let obg of contactMethods" [ngValue]="method">{{obg.name}}</option> -->
+                <!--כך אנו קוראים לפרופרטיז של תגים ומשנים להם את הערך לפי הצורך [value] -->
+                <option *ngFor="let obg of contactMethods" [value]="obg.id">{{obg.name}}</option>
+            </select>
+        </div>
+
+
+    <!--radio--------------------------------------------------------------------- -->
+
+        
+    <div class="radio" *ngFor="let method of contactMethods">
+        <label for="">
+            <input type="radio" name="contactMethod" [value]="method.id">
+            {{method.name}}
+        </label>
+    </div>
+
+
+        <p>{{f.value|json}}</p>  
+        
+        
+
+    <!--תנאי ללחיצה על הכפתור -->
+    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</div>
+</form>

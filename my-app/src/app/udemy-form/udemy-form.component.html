@@ -1,0 +1,47 @@
+<p>udemy-form works!</p>
+<form action="" #formDetails="ngForm" (ngSubmit)="submit(formDetails)">
+    <div ngModelGroup="contact" #contact = ngModelGroup>
+
+
+
+
+    <!--input--------------------------------------------------------------------- -->
+
+        <div class="form-group">
+            <label for="CourseName">CourseName</label>
+            <input required class="form-control" minlength="3" ngModel name="CourseName" id="CourseName" type="text" #CourseName="ngModel">
+                <div class="alert alert-danger" *ngIf="CourseName.touched && !CourseName.valid">
+                    <div *ngIf="CourseName.errors.required">CourseName is required</div>
+                    <div *ngIf="CourseName.errors.minlength">minlength is {{CourseName.errors.minlength.requiredLength}}</div>
+                </div>
+    
+        </div>
+    <!--select--------------------------------------------------------------------- -->
+
+
+        <div class="form-group">
+            <label for="selectCat"></label>
+            <select ngModel name="selectCat" id="selectCat" class="form-control">
+                <option *ngFor="let obg of contactMethods" [value]="obg.id">{{obg.name}}</option>
+            </select>
+        </div>
+    <!--radio--------------------------------------------------------------------- -->
+
+
+        <div class="radio">
+            <label for="">
+                <input type="radio" ngModel name="moneyBack" name="moneyBack" [value]="true">
+                30 days moneyBack
+            </label>
+        </div>
+
+
+
+
+        <p>{{formDetails.value|json}}</p>  
+
+        <button class="btn btn-primary">Submit</button>
+
+    </div>
+
+</form>

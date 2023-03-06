@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // גם כדי להשתמש בטו וואי ביינדינג אנו צריכים לייבא לפרוייקט שלנו את הסיפריה הזו
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component.ts/courses.component';
 import { CoursesService } from './Services/courses.service';
@@ -19,6 +19,9 @@ import { NgForExComponent } from './ng-for-ex/ng-for-ex.component';
 import { NgClassExComponent } from './ng-class-ex/ng-class-ex.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
+import { ContaactFormComponent } from './contaact-form/contaact-form.component';
+import { UdemyFormComponent } from './udemy-form/udemy-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   // כאן אנו רושמים את כל הקומפוננטות השייכות לפרוייקט
@@ -38,10 +41,14 @@ import { ZippyComponent } from './zippy/zippy.component';
     NgClassExComponent,
     InputFormatDirective,
     ZippyComponent,
+    SignupFormComponent,
+    ContaactFormComponent,
+    UdemyFormComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
 //כאן אנו נירשום את כל הקבצי הפונקציונליות והסרויסים  שהקומפוננטות שלנו משתמשות בהם או תלויות בהם
   providers: [
