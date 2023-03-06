@@ -8,8 +8,9 @@
             type="text" 
             class="form-control">
         <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
-            <div *ngIf="username.errors.required">username is required</div>
+            <div *ngIf="username.errors.required" >username is required</div>
             <div *ngIf="username.errors.cannotContainSpace">cannot contain space</div>
+            <div *ngIf="username.errors.shouldBeUnique">username is taken</div>
 
         </div>
         </div>
